@@ -38,8 +38,8 @@ public class CustomerController {
 
     @PutMapping({"/update/{id}"})
     public ResponseEntity<Customer> updateUser(@PathVariable("id") Integer userId, @RequestBody Customer customerDetails) {
-        customerService.updateUser(userId, customerDetails);
-        return new ResponseEntity<>(customerService.getUserById(userId), HttpStatus.OK);
+        Customer customerDetails1 = customerService.updateUser(userId, customerDetails);
+        return new ResponseEntity<>(customerDetails1, HttpStatus.OK);
     }
 
     @DeleteMapping({"/delete/{id}"})

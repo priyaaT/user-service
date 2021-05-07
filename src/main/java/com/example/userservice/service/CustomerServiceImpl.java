@@ -38,12 +38,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateUser(Integer id, Customer customer) {
+    public Customer updateUser(Integer id, Customer customer) {
         Customer customerFromDb = customerRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         customerFromDb.setAddress(customer.getAddress());
         customerFromDb.setName(customer.getName());
         customerFromDb.setPan(customer.getPan());
-        customerRepository.save(customerFromDb);
+        return customerRepository.save(customerFromDb);
     }
 
     @Override

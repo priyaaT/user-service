@@ -11,7 +11,7 @@ public interface CustomerService {
 
     Customer insert(Customer customer);
 
-    void updateUser(Integer id, Customer customer);
+    Customer updateUser(Integer id, Customer customer);
 
     void deleteUser(Integer id);
 }
